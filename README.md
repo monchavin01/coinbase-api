@@ -13,7 +13,7 @@ A command-line interface tool for interacting with the Coinbase Exchange API. Th
 1. Install dependencies:
 
 ```bash
-npm install
+yarn install
 ```
 
 ## Configuration
