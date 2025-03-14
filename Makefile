@@ -9,7 +9,7 @@ get-order:
 place-sell:
 	@echo "Select product ID:"
 	@PS3="Choose product (1-3): "; \
-	select product_id in "BTC-USD" "ETH-USD" "USDT-USD"; do \
+	select product_id in "BTC-USD" "LINK-USD" "USDT-USD"; do \
 		if [ -n "$$product_id" ]; then \
 			break; \
 		fi; \
@@ -20,7 +20,7 @@ place-sell:
 place-buy:
 	@echo "Select product ID:"
 	@PS3="Choose product (1-3): "; \
-	select product_id in "BTC-USD" "ETH-USD" "USDT-USD"; do \
+	select product_id in "BTC-USD" "LINK-USD" "USDT-USD"; do \
 		if [ -n "$$product_id" ]; then \
 			break; \
 		fi; \
