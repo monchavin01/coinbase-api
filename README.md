@@ -18,13 +18,18 @@ npm install
 
 ## Configuration
 
-The tool uses the following Coinbase API credentials which are configured in `coinbase.js`:
+The tool uses environment variables for configuration. Create a `.env` file with the following variables:
 
-- API Key
-- API Secret
-- API Passphrase
+```env
+COINBASE_API_KEY=your_api_key_here
+COINBASE_API_SECRET=your_api_secret_here
+COINBASE_API_PASSPHRASE=your_passphrase_here
+COINBASE_API_URL=https://api-public.sandbox.exchange.coinbase.com
+```
 
-Make sure to update these with your own credentials before using the tool.
+Replace the placeholder values with your actual Coinbase API credentials.
+
+**Note:** The `.env` file is included in `.gitignore` to prevent accidentally committing sensitive information.
 
 ## Available Commands
 

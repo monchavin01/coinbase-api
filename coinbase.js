@@ -1,14 +1,34 @@
 const axios = require("axios");
-var crypto = require("crypto");
+const crypto = require("crypto");
+require("dotenv").config();
 
 // Configuration
 const API_CONFIG = {
-  apiKey: "5d3abc28c8a4095a49a63a6724144c8d",
-  apiSecret:
-    "xeiKxfEPoanvjkoMB5cCy0RNT0pZ6xuYl/C5HTujdPvEFfJN/gc9oDxsYuCY68o95IsFeKzsfC910sHxKyzg0Q==",
-  apiPassphrase: "lsgsgbjps6c1",
-  baseURL: "https://api-public.sandbox.exchange.coinbase.com",
+  apiKey: process.env.COINBASE_API_KEY,
+  apiSecret: process.env.COINBASE_API_SECRET,
+  apiPassphrase: process.env.COINBASE_API_PASSPHRASE,
+  baseURL: process.env.COINBASE_API_URL,
 };
+
+// Validate environment variables
+function validateConfig() {
+  const required = [
+    "COINBASE_API_KEY",
+    "COINBASE_API_SECRET",
+    "COINBASE_API_PASSPHRASE",
+    "COINBASE_API_URL",
+  ];
+  const missing = required.filter((key) => !process.env[key]);
+
+  if (missing.length > 0) {
+    console.error("Error: Missing required environment variables:");
+    console.error(missing.join(", "));
+    console.error("Please check your .env file");
+    process.exit(1);
+  }
+}
+
+validateConfig();
 
 // Create signature for authentication
 function createSignature(timestamp, method, requestPath, body = "") {

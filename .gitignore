@@ -1,0 +1,11 @@
+# Environment variables
+.env
+
+# Dependencies
+node_modules/
+
+# Package manager locks
+yarn.lock
+
+# IDE
+.vscode/

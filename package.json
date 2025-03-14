@@ -1,5 +1,13 @@
 {
+  "name": "coinbase-api-cli",
+  "version": "1.0.0",
+  "description": "Command-line interface for Coinbase Exchange API",
+  "main": "coinbase.js",
+  "scripts": {
+    "start": "node coinbase.js"
+  },
   "dependencies": {
-    "axios": "^1.8.1"
+    "axios": "^1.8.1",
+    "dotenv": "^16.4.7"
   }
 }
